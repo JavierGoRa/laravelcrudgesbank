@@ -12,29 +12,41 @@ class TransactionSeeder extends Seeder
     public function run()
     {
         DB::table('transactions')->insert([
+            'numMovimiento' =>'2542',
             'account_id' => '1',
             'fechaHora' => '2018-2-12',
             'tipo' => 'I',
-            'cantidad' => '600'
+            'concepto' => 'Integro',
+            'cantidad' => '100',
+            'saldo' => '500'
         ]);
         DB::table('transactions')->insert([
+            'numMovimiento' =>'5847',
             'account_id' => '1',
             'fechaHora' => '2018-2-15',
             'tipo' => 'R',
-            'cantidad' => '200'
+            'concepto' => 'Reitegro',
+            'cantidad' => '200',
+            'saldo' => '300'
         ]);
 
         DB::table('transactions')->insert([
-            'account_id' => '2',
-            'fechaHora' => '2018-2-12',
+            'numMovimiento' =>'9632',
+            'account_id' => '1',
+            'fechaHora' => '2018-2-17',
             'tipo' => 'I',
-            'cantidad' => '512'
-        ]);
+            'concepto' => 'Integro',
+            'cantidad' => '600',
+            'saldo' => '900'        ]);
         DB::table('transactions')->insert([
-            'account_id' => '2',
-            'fechaHora' => '2018-2-15',
+            'numMovimiento' =>'8475',
+            'account_id' => '1',
+            'fechaHora' => '2018-2-21',
             'tipo' => 'R',
-            'cantidad' => '251'
-        ]);
+            'concepto' => 'Reitegro',
+            'cantidad' => '100',
+            'saldo' => '800'        ]);
+        //factory(Transaction::class)->times(20)->create();
+
     }
 }

@@ -31,6 +31,7 @@ class ClientSeeder extends Seeder
             'dni' => '65847584G',
             'email' => 'warren@gmail.com',
         ]);
+        
         factory(Client::class)->times(20)->create();
 
     }

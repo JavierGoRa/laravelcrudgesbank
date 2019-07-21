@@ -5,10 +5,11 @@ use Faker\Generator as Faker;
 $factory->define(App\Account::class, function (Faker $faker) {
     return [
         'numCuenta' => $faker->name,
-        'account_id' => $faker->foreignerIdNumber,
+        'client_id' => $faker->randomNumber,
         'fechaAlta' => $faker->date,
-        'Saldo'=> $faker->randomNumber,
-        'fechaUMov'=> $faker->randomNumber
+        'saldo'=> $faker->randomNumber,
+        'fechaUMov'=> $faker->date,
+        'numMvtos' => $faker->randomNumber
 
     ];
 });

@@ -17,10 +17,10 @@ class CreateAccountsTable extends Migration
             $table->increments('id');
             $table->char('numCuenta', 24);
             $table->unsignedInteger('client_id');
-            $table->timestamp('fechaAlta');
-            $table->integer('Saldo');
+            $table->timestamp('fechaAlta')->useCurrent();
+            $table->decimal('saldo',10,2)->default(0);
             $table->timestamp('fechaUMov')->useCurrent();
-            $table->integer('numMvtos');
+            $table->integer('numMvtos')->default(0);
             $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();
         });

@@ -15,11 +15,14 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('numMovimiento');
             $table->unsignedInteger('account_id');
             $table->foreign('account_id')->references('id')->on('accounts');
             $table->timestamp('fechaHora')->useCurrent();
             $table->enum('tipo', ['I', 'R']);
-            $table->integer('cantidad');
+            $table->text('concepto');
+            $table->decimal('cantidad',10,2);
+            $table->decimal('saldo', 10, 2);
             $table->timestamps();
         });
     }
